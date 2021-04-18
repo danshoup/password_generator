@@ -27,7 +27,7 @@ var choiceArray = [];
 var randomPass = [];
 
   // Window prompt for user to choose password length; stored to pwdLength variable.
-  var pwdLength = window.prompt("To generate a password: \n\nBegin by choosing a length between 8 and 128 characters.");
+  var pwdLength = window.prompt("To generate a password: \n\nBegin by choosing a length between 8 and 128 characters. \n\nThen click 'OK' to continue.");
     
     // Alert and cancel function if incorrect input.
     if (pwdLength < 8 || pwdLength > 128) {
@@ -35,14 +35,14 @@ var randomPass = [];
       return;
       // Alert confirmation of input and continue password generation.
     } else if (pwdLength >= 8 || pwdLength <= 128) {
-      window.alert("\nYou have entered a value of " + pwdLength + " for your password. \n\nClick 'OK' to continue.");
+      window.alert("\nYou have entered a value of '" + pwdLength + "' for your password. \n\nClick 'OK' to continue.");
     }
 
   // Add confirmation box input for user to choose character types.
-  var numbers = window.confirm("\nWould you like to include 'numbers' (0, 1, 2, etc.) in your password? \n\nIf yes, click 'OK'.");
-  var lwrCase = window.confirm("\nWould you like to include 'lowercase' characters in your password? \n\nIf yes, click 'OK'.");
-  var upCase = window.confirm("\nWould you like to include 'UPPERCASE' characters in your password? \n\nIf yes, click 'OK'.");
-  var spChar = window.confirm("\nWould you like to include 'special characters' (such as: !@#$%) in your password? \n\nIf yes, click 'OK'.");
+  var numbers = window.confirm("\nWould you like to include 'numbers' (0, 1, 2, etc.) in your password? \n\nIf yes, click 'OK'. If not, click 'CANCEL'.");
+  var lwrCase = window.confirm("\nWould you like to include 'lowercase' characters in your password? \n\nIf yes, click 'OK'. If not, click 'CANCEL'.");
+  var upCase = window.confirm("\nWould you like to include 'UPPERCASE' characters in your password? \n\nIf yes, click 'OK'. If not, click 'CANCEL'.");
+  var spChar = window.confirm("\nWould you like to include 'special characters' (such as: !@#$%) in your password? \n\nIf yes, click 'OK'. If not, click 'CANCEL'.");
 
     // Alert if no character types were chosen and stop function.
     if (numbers !== true && lwrCase !== true && upCase !== true && spChar !== true){
