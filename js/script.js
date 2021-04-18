@@ -35,11 +35,6 @@ var specialArr = special.split("");
 var choiceArray = [];
 var randomPass = "";
 
-// // This array concatenates all of the imput array choices.
-// var pswdArray = numArr.concat(lowerArr, upperArr, specialArr);
-// Don't need this because added choiceArray
-
-
   // Window prompt for user to choose password length; stored to variable
   var pwdLength = window.prompt("To generate a password: \n\nBegin by choosing a length between 8 and 128 characters.");
     
@@ -99,11 +94,6 @@ var randomPass = "";
     // Create random generated variable from the pushed arrays.
     for (var i = 0; i < pwdLength; i++); 
     
-
-
-
-    // var randomPswd = choiceArray[Math.floor(Math.random()*choiceArray.length)];
-    // console.log(randomPswd);
 
 }
 
