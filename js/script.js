@@ -15,30 +15,30 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-//make a function to generate the password
+// Make a function to generate the password
 
 function generatePassword() {
 
-// Create variable strings for breaking into arrays and creating random password.
+// Create variable strings for user choices.
 var num = "0123456789";
 var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var special = "~!@#$%^&*()";
 
-// Split variable strings into arrays for random password access.
+// Split variable strings into arrays to be called for random password access.
 var numArr = num.split("");
 var lowerArr = lower.split("");
 var upperArr = upper.split("");
 var specialArr = special.split("");
 
-// Create an empty array to concatenate array choice based on user input.
+// Create empty arrays to add to based on user input.
 var choiceArray = [];
-var randomPass = "";
+var randomPass = [];
 
-  // Window prompt for user to choose password length; stored to variable
+  // Window prompt for user to choose password length; stored to pwdLength variable.
   var pwdLength = window.prompt("To generate a password: \n\nBegin by choosing a length between 8 and 128 characters.");
     
-    // Alert for incorrect input and cancel function
+    // Alert and cancel function if incorrect input.
     if (pwdLength < 8 || pwdLength > 128) {
       window.alert("\nYou did not input a valid length between 8 and 128 characters. \n\nYour password was not created. \n\nPlease try again."); 
       return;
@@ -47,7 +47,7 @@ var randomPass = "";
       window.alert("\nYou have entered a value of " + pwdLength + " for your password. \n\nClick 'OK' to continue.");
     }
 
-  // Add confirmation box input for character types.
+  // Add confirmation box input for user to choose character types.
   var numbers = window.confirm("\nWould you like to include 'numbers' (0, 1, 2, etc.) in your password? \n\nIf yes, click 'OK'.");
   var lwrCase = window.confirm("\nWould you like to include 'lowercase' characters in your password? \n\nIf yes, click 'OK'.");
   var upCase = window.confirm("\nWould you like to include 'UPPERCASE' characters in your password? \n\nIf yes, click 'OK'.");
@@ -60,12 +60,12 @@ var randomPass = "";
     }
 
 
-    // Action if any character type chosen.
+    // Action if any character types are chosen.
     if (numbers === true || lwrCase === true || upCase === true || spChar === true){
       window.confirm("\nClick 'OK' to generate your password.");
     }
 
-    // Push arrays together if variable chosen in confirm boxes.
+    // Push arrays together based on user choice of characcter types.
     if (numbers === true){
       choiceArray.push(...numArr);
     }
@@ -79,21 +79,10 @@ var randomPass = "";
       choiceArray.push(...specialArr);
     }
 
-
-
-    var rando1 = choiceArray[Math.floor(Math.random() * choiceArray.length)];
-    console.log(rando1);
-
-
-
-
-    console.log(choiceArray);
-    console.log(choiceArray.toString());
-    console.log(choiceArray.join(""));
-
-    // Create random generated variable from the pushed arrays.
-    for (var i = 0; i < pwdLength; i++); 
-    
+    // Choose randomly from joined arrays based on the password length chosen by user to create pseudo-random password to view on screen.
+  for (var i = 0; i < pwdLength; i++) {
+    randomPass.push (choiceArray[Math.floor(Math.random() * choiceArray.length)]);
+  }
 
 }
 
