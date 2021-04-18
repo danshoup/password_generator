@@ -1,1 +1,1 @@
-# password_generator
+# pswd_generator
