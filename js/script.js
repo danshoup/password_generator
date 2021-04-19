@@ -43,7 +43,7 @@ var randomPass = [];
       return;
       // Alert confirmation of input and continue password generation.
     } else if (pwdLength >= 8 || pwdLength <= 128) {
-      window.alert("\nYou have entered a value of '" + pwdLength + "' for your password. \n\nClick 'OK' to continue.");
+      window.alert("\nYou have chosen a length of '" + pwdLength + "' characters for your password. \n\nClick 'OK' to continue.");
     }
 
   // Add confirmation box input for user to choose character types.
