@@ -38,7 +38,7 @@ var randomPass = [];
   var pwdLength = window.prompt("To generate a password: \n\nBegin by choosing a length between 8 and 128 characters. \n\nThen click 'OK' to continue.");
     
     // Alert and cancel function if incorrect input.
-    if (pwdLength < 8 || pwdLength > 128) {
+    if (pwdLength < 8 || pwdLength > 128 || pwdLength.type !== num) {
       window.alert("\nYou did not input a valid length between 8 and 128 characters. \n\nYour password was not created. \n\nPlease try again."); 
       return;
       // Alert confirmation of input and continue password generation.
